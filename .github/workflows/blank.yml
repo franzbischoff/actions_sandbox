@@ -17,6 +17,7 @@ on:
 jobs:
   # This workflow contains a single job called "init_process"
   init_process:
+    environment: Environment_sample
     name: First
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
