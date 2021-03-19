@@ -32,9 +32,9 @@ jobs:
       - id: checkout
         uses: actions/checkout@v2
       - id: oneline
-        run: echo Hello, world!
+        run: echo "::set-output name=test::hello"
       - id: anotherline
-        run: echo Hello, world!
+        run: echo "::set-output name=test::world"
          
   build_code:
     environment: 
