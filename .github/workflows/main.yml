@@ -1,0 +1,19 @@
+name: Test
+
+on:
+  workflow_run:
+    workflows:
+      - Preflight
+    branches: 
+      - develop
+    types:
+      - completed
+
+jobs:
+  test-job:
+    name: Test Step
+    runs-on: ubuntu-latest
+    steps:
+      - run: env
+    steps:
+      - uses: actions/checkout@v2
