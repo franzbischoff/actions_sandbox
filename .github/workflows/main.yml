@@ -15,5 +15,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: env
-    steps:
       - uses: actions/checkout@v2
