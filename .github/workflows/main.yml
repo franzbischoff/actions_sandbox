@@ -1,14 +1,8 @@
 name: Test
 
-on:
-  workflow_run:
-    workflows:
-      - Preflight
-    branches: 
-      - develop
-    types:
-      - completed
-
+on: 
+  - push
+  
 jobs:
   test-job:
     name: Test Step
@@ -16,6 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.workflow_run.head_branch }}
-      - run: git branch
-      - run: env
+          ref: targets-runs
+          path: .targets-runs
+        continue-on-error: true
+        
+      - run: ls -lah
